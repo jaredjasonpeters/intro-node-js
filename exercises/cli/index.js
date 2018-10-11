@@ -19,7 +19,7 @@ program
         const contacts = getContacts()
         contacts[key] = {firstName, lastName, phoneNumber}
         saveContacts(contacts)
-      })
+      }).catch(e => console.log(e))
   })
 
 program
@@ -39,7 +39,7 @@ program
       .then(({selected}) => {
         const contact = contacts[selected]
         console.log(JSON.stringify(contact, null, 2))
-      })
+      }).catch(e => console.log(e))
   })
 
 program.parse(process.argv)
